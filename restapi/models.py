@@ -32,3 +32,7 @@ class Event(models.Model):
     message = models.TextField()
     environment = models.ForeignKey(Environment) 
     status = models.ForeignKey(Status, blank=True, null=True)
+
+    def __unicode__(self):
+        return self.subject
+
