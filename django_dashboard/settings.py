@@ -107,6 +107,9 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+APPEND_SLASH = False
+TASTYPIE_ALLOW_MISSING_SLASH = True
+
 ROOT_URLCONF = 'django_dashboard.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
