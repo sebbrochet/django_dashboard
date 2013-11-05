@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'south',
     'restapi',
+    'tastypie',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
