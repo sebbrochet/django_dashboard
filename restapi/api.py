@@ -2,6 +2,7 @@ from tastypie.resources import ModelResource
 from restapi.models import Project, Environment, Status, Event
 from tastypie.authorization import Authorization
 from tastypie import fields
+from tastypie.resources import ModelResource, ALL, ALL_WITH_RELATIONS
 
 class ProjectResource(ModelResource):
     class Meta:
@@ -9,12 +10,16 @@ class ProjectResource(ModelResource):
         resource_name = 'projects'
         authorization= Authorization()
 
+        ordering = ['creation_date', '-creation_date']
+
 class EnvironmentResource(ModelResource):
     project = fields.ForeignKey(ProjectResource, 'project')
     class Meta:
         queryset = Environment.objects.all()
         resource_name = 'environments'
         authorization= Authorization()
+
+        ordering = ['creation_date', '-creation_date']
 
 class StatusResource(ModelResource):
     class Meta:
@@ -30,3 +35,12 @@ class EventResource(ModelResource):
         queryset = Event.objects.all()
         resource_name = 'events'
         authorization= Authorization()
+
+        filtering = {
+            'date': ALL,
+            'subject': ALL,
+            'status': ALL,
+            'environment': ALL_WITH_RELATIONS,
+        }
+
+        ordering = ['date', '-date']
