@@ -103,12 +103,15 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'restapi.middleware.crossdomainxhr.CORSMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 APPEND_SLASH = False
 TASTYPIE_ALLOW_MISSING_SLASH = True
+XS_SHARING_ALLOWED_ORIGINS='*'
+#XS_SHARING_ALLOWED_METHODS='GET'
 
 ROOT_URLCONF = 'django_dashboard.urls'
 
