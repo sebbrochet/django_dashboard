@@ -1,4 +1,4 @@
-## django_dashboard: REST API to manage a Release Dashboard
+## django_dashboard: REST API based on django to implement a Release Dashboard
 
 This project provides a REST API to create/read/update/delete:
 * Projects
