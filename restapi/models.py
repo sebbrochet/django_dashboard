@@ -1,7 +1,6 @@
 from django.db import models
 import datetime
 
-# Create your models here.
 class Project(models.Model):
     creation_date = models.DateTimeField(default=datetime.datetime.now)
     name = models.CharField(max_length=200)

@@ -21,6 +21,10 @@ class EnvironmentResource(ModelResource):
 
         ordering = ['creation_date', '-creation_date']
 
+        filtering = {
+            'project': ALL_WITH_RELATIONS,
+        }
+
 class StatusResource(ModelResource):
     class Meta:
         queryset = Status.objects.all()

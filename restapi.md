@@ -33,7 +33,7 @@ There can be several different Environment for the same Project.
 GET http://.../api/environments
 
 . List all environments for a specific project:
-GET http://.../api/projects/{id}/environments
+GET http://.../api/environments?project={id}
 
 . Return a specific environment:
 GET http://.../api/environments/{id}
@@ -64,10 +64,10 @@ An Event is something that may happen in the life of an Environment.
 GET http://.../api/events
 
 . List all events for a specific environment
-GET http://.../api/environments/{id}/events
+GET http://.../api/events?environment={id}
 
 . List all events for a specific project
-GET http://.../api/projects/{id}/events
+GET http://.../api/events?environment__project={id}
 
 Filter events by date:
 ?date=
