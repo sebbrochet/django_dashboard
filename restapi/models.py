@@ -16,7 +16,7 @@ class Environment(models.Model):
     project = models.ForeignKey(Project, related_name = 'environments')
     
     def __unicode__(self):
-        return self.name
+        return "%s (%s)" % (self.name, self.project)
 
 class Status(models.Model):
     name = models.CharField(max_length=200)
