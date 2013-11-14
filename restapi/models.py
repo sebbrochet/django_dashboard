@@ -33,5 +33,5 @@ class Event(models.Model):
     status = models.ForeignKey(Status, blank=True, null=True, related_name = 'events')
 
     def __unicode__(self):
-        return self.subject
+        return "%s (%s)" % (self.subject, self.message)
 
