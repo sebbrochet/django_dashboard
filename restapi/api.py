@@ -50,7 +50,7 @@ class StatusResource(ModelResource):
         }
 
 class EventResource(ModelResource):
-    environment = fields.ForeignKey(EnvironmentResource, 'environment')
+    environment = fields.ForeignKey(EnvironmentResource, 'environment', full=True)
     status = fields.ForeignKey(StatusResource, 'status', null=True, blank=True)
 
     class Meta:
