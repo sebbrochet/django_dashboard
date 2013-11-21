@@ -21,7 +21,7 @@ class ProjectResource(ModelResource):
 
 
 class EnvironmentResource(ModelResource):
-    project = fields.ForeignKey(ProjectResource, 'project')
+    project = fields.ForeignKey(ProjectResource, 'project', full=True)
     class Meta:
         queryset = Environment.objects.all()
         resource_name = 'environments'
