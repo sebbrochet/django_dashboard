@@ -28,7 +28,7 @@ class EnvironmentResource(ModelResource):
         authorization= Authorization()
         always_return_data = True
 
-        ordering = ['creation_date', '-creation_date']
+        ordering = ['creation_date', '-creation_date', 'name', '-name']
 
         filtering = {
             'name': ALL_WITH_RELATIONS,
